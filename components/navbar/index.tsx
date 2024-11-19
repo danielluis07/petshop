@@ -55,7 +55,7 @@ const Navbar = async () => {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-md text-white">
-                    Cachorros
+                    <Link href="/cachorros">Cachorros</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="flex flex-col p-4 gap-3">
@@ -74,7 +74,7 @@ const Navbar = async () => {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="text-md text-white">
-                    Gatos
+                    <Link href="/gatos">Gatos</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="flex flex-col p-4 gap-3">
