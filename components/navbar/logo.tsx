@@ -7,22 +7,10 @@ const dancingScript = localFont({
   weight: "100 900",
 });
 
-export const Logo = ({
-  isScrolled,
-  isNotHomePage,
-}: {
-  isScrolled?: boolean;
-  isNotHomePage?: boolean;
-}) => {
+export const Logo = () => {
   return (
     <div
-      className={`${dancingScript.className} ${
-        isNotHomePage
-          ? "text-white"
-          : isScrolled
-          ? "text-default-orange"
-          : "text-white"
-      } font-[900] text-4xl pr-14 cursor-default`}>
+      className={`${dancingScript.className} font-[900] text-4xl pr-14 cursor-default text-white`}>
       <Link href="/">Petly</Link>
     </div>
   );

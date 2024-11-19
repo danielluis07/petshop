@@ -6,32 +6,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { cn } from "@/lib/utils";
 import { Menu } from "lucide-react";
 
-const MenuMobile = ({
-  isScrolled,
-  isNotHomePage,
-}: {
-  isScrolled: boolean;
-  isNotHomePage: boolean;
-}) => {
+const MenuMobile = () => {
   return (
     <Sheet>
-      {isNotHomePage ? (
-        <SheetTrigger asChild className="cursor-pointer text-white">
-          <Menu />
-        </SheetTrigger>
-      ) : (
-        <SheetTrigger
-          asChild
-          className={cn(
-            "cursor-pointer",
-            isScrolled ? "text-black" : "text-white"
-          )}>
-          <Menu />
-        </SheetTrigger>
-      )}
+      <SheetTrigger asChild className="cursor-pointer text-white">
+        <Menu />
+      </SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Are you absolutely sure?</SheetTitle>
