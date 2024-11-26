@@ -1,112 +1,12 @@
 "use client";
 
 import { ProductCard } from "@/components/ui/product-card";
-import placeholder from "@/public/images/food-placeholder.webp";
 
-const products = [
-  {
-    id: 1,
-    name: "Dog Food",
-    category: "Food",
-    petType: "Dog",
-    rating: 4.5,
-    price: 25,
-    rating_count: 100,
-    image: placeholder,
-  },
-  {
-    id: 2,
-    name: "Cat Food",
-    category: "Food",
-    petType: "Cat",
-    rating: 4.5,
-    price: 25,
-    rating_count: 100,
-    image: placeholder,
-  },
-  {
-    id: 3,
-    name: "Dog Toy",
-    category: "Toy",
-    petType: "Dog",
-    rating: 4.5,
-    price: 25,
-    rating_count: 100,
-    image: placeholder,
-  },
-  {
-    id: 4,
-    name: "Cat Toy",
-    category: "Toy",
-    petType: "Cat",
-    rating: 4.5,
-    price: 25,
-    rating_count: 100,
-    image: placeholder,
-  },
-  {
-    id: 5,
-    name: "Dog Care",
-    category: "Care",
-    petType: "Dog",
-    rating: 4.5,
-    price: 25,
-    rating_count: 100,
-    image: placeholder,
-  },
-  {
-    id: 6,
-    name: "Cat Care",
-    category: "Care",
-    petType: "Cat",
-    rating: 4.5,
-    price: 25,
-    rating_count: 100,
-    image: placeholder,
-  },
-  {
-    id: 6,
-    name: "Cat Care",
-    category: "Care",
-    petType: "Cat",
-    rating: 4.5,
-    price: 25,
-    rating_count: 100,
-    image: placeholder,
-  },
-  {
-    id: 6,
-    name: "Cat Care",
-    category: "Care",
-    petType: "Cat",
-    rating: 4.5,
-    price: 25,
-    rating_count: 100,
-    image: placeholder,
-  },
-  {
-    id: 6,
-    name: "Cat Care",
-    category: "Care",
-    petType: "Cat",
-    rating: 4.5,
-    price: 25,
-    rating_count: 100,
-    image: placeholder,
-  },
-  {
-    id: 6,
-    name: "Cat Care",
-    category: "Care",
-    petType: "Cat",
-    rating: 4.5,
-    price: 25,
-    rating_count: 100,
-    image: placeholder,
-  },
-];
+type Props = {
+  products: Product[];
+};
 
-export const CatProducts = () => {
+export const CatProducts = ({ products }: Props) => {
   return (
     <div className="max-w-7xl mx-auto">
       <h1 className="text-3xl font-bold mb-10 text-center mt-14">
@@ -137,13 +37,14 @@ export const CatProducts = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-14">
-        {products.map((product, index) => (
+        {products.map((item, index) => (
           <ProductCard
-            image={product.image}
-            price={product.price}
-            rating={product.rating}
-            rating_count={product.rating_count}
-            title={product.name}
+            image={item.product.imageUrl}
+            price={item.product.price}
+            rating={0}
+            slug={item.product.slug}
+            rating_count={0}
+            title={item.product.name}
             key={index}
           />
         ))}

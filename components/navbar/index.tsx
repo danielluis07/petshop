@@ -27,15 +27,15 @@ import { auth } from "@/auth";
 import Link from "next/link";
 
 const dogs: { title: string; href: string }[] = [
-  { title: "Alimentos", href: "#" },
-  { title: "Brinquedos", href: "#" },
-  { title: "Higiene", href: "#" },
+  { title: "Alimentos", href: "/cachorros/alimentos" },
+  { title: "Brinquedos", href: "/cachorros/brinquedos" },
+  { title: "Higiene", href: "/cachorros/higiene" },
 ];
 
 const cats: { title: string; href: string }[] = [
-  { title: "Alimentos", href: "#" },
-  { title: "Brinquedos", href: "#" },
-  { title: "Higiene", href: "#" },
+  { title: "Alimentos", href: "/gatos/alimentos" },
+  { title: "Brinquedos", href: "/gatos/brinquedos" },
+  { title: "Higiene", href: "/gatos/higiene" },
 ];
 
 const Navbar = async () => {

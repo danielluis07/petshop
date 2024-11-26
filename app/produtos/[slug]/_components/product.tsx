@@ -2,16 +2,17 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { StaticImageData } from "next/image";
+import placeholder from "@/public/images/image-placeholder.jpg";
 import { Rating } from "react-simple-star-rating";
+import { formatPrice } from "@/lib/format-price";
 
 type Props = {
-  image: StaticImageData;
+  image: string | null;
   title: string;
   price: number;
   rating: number;
   rating_count: number;
-  description: string;
+  description: string | null;
 };
 
 export const Product = ({
@@ -29,7 +30,7 @@ export const Product = ({
           {/* Product Image */}
           <div className="relative bg-gray-50 h-96">
             <Image
-              src={image} // Replace with your image source
+              src={image || placeholder} // Replace with your image source
               alt="Product Image"
               fill
               priority
@@ -63,7 +64,7 @@ export const Product = ({
 
             {/* Price */}
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
-              R$ {price}
+              {formatPrice(price)}
             </h2>
 
             {/* Buy Button */}

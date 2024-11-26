@@ -47,6 +47,7 @@ export const SignInForm = () => {
         }
         if (response?.success) {
           toast.success("Logado com sucesso!");
+          router.refresh();
           router.push("/");
         }
       });

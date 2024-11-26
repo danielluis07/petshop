@@ -1,9 +1,10 @@
 import { DynamicBreadcrumb } from "@/components/dynamic-breadcrumb";
-import { CatProducts } from "./_components/cat-products";
-import { getCatProducts } from "@/queries/products/get-cat-products";
+import React from "react";
+import { CatProducts } from "../_components/cat-products";
+import { getCatFood } from "@/queries/products/get-cat-food";
 
-const CatProductsPage = async () => {
-  const data = await getCatProducts();
+const CatFoodPage = async () => {
+  const data = await getCatFood();
 
   if (!data) {
     return <div>Houve um problema ao carregar as informações</div>;
@@ -18,4 +19,4 @@ const CatProductsPage = async () => {
   );
 };
 
-export default CatProductsPage;
+export default CatFoodPage;

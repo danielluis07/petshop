@@ -1,9 +1,9 @@
 import { DynamicBreadcrumb } from "@/components/dynamic-breadcrumb";
-import { DogProducts } from "./_components/dog-products";
-import { getDogProducts } from "@/queries/products/get-dog-products";
+import { DogProducts } from "../_components/dog-products";
+import { getDogCare } from "@/queries/products/get-dog-care";
 
-const DogProductsPage = async () => {
-  const data = await getDogProducts();
+const DogCarePage = async () => {
+  const data = await getDogCare();
 
   if (!data) {
     return <div>Erro ao carregar os produtos</div>;
@@ -18,4 +18,4 @@ const DogProductsPage = async () => {
   );
 };
 
-export default DogProductsPage;
+export default DogCarePage;

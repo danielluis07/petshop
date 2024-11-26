@@ -95,7 +95,7 @@ export const {
         .from(account)
         .where(eq(account.userId, token.sub));
 
-      token.role = existingUser.role || "ADMIN";
+      token.role = existingUser.role;
       token.isOAuth = !!existingAccount;
       token.name = existingUser.name;
       token.email = existingUser.email;

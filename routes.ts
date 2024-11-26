@@ -11,6 +11,7 @@ export const publicRoutes = [
   "/api",
   "/cachorros",
   "/gatos",
+  "/test",
   "/produtos",
 ];
 

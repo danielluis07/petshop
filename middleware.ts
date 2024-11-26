@@ -8,13 +8,24 @@ export default auth(async (req) => {
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;
   const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
-  const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
 
+  // Check if the route is public or starts with a public prefix
+  const isPublicRoute = publicRoutes.some((route) =>
+    nextUrl.pathname.startsWith(route)
+  );
+
+  // Allow API auth routes
   if (isApiAuthRoute) {
     return undefined;
   }
 
-  if (!isLoggedIn && !isPublicRoute) {
+  // Allow public routes and dynamic routes like /products/[slug]
+  if (isPublicRoute) {
+    return undefined;
+  }
+
+  // Redirect to the login page if not logged in and trying to access a protected route
+  if (!isLoggedIn) {
     let callbackUrl = nextUrl.pathname;
     if (nextUrl.search) {
       callbackUrl += nextUrl.search;

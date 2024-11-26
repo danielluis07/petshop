@@ -46,6 +46,7 @@ export const signUp = async (
         name,
         email,
         password: hashedPassword,
+        role: "USER",
       })
       .returning();
 

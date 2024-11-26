@@ -1,15 +1,19 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import { Button } from "@/components/ui/button";
+import { formatPrice } from "@/lib/format-price";
+import placeholder from "@/public/images/image-placeholder.jpg";
+import { useRouter } from "next/navigation";
 
 type Props = {
-  image: StaticImageData;
+  image: string | null;
   title: string;
   price: number;
   rating: number;
+  slug: string;
   rating_count: number;
 };
 
@@ -18,9 +22,11 @@ export const ProductCard = ({
   price,
   rating,
   title,
+  slug,
   rating_count,
 }: Props) => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
+  const router = useRouter();
 
   useEffect(() => {
     setIsMounted(true);
@@ -34,11 +40,11 @@ export const ProductCard = ({
     <div className="bg-white shadow-sm rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <div className="relative w-full h-48">
         <Image
-          src={image}
+          src={image || placeholder}
           alt={title}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
-          className="object-contain lg:object-cover"
+          className="object-contain"
         />
       </div>
       <div className="p-4 space-y-2">
@@ -53,11 +59,15 @@ export const ProductCard = ({
         </h2>
         <div className="flex items-center justify-center">
           <span className="text-lg font-semibold text-gray-900">
-            R${price.toFixed(2)}
+            {formatPrice(price)}
           </span>
         </div>
         <div className="flex justify-center">
-          <Button variant="outline">Comprar</Button>
+          <Button
+            onClick={() => router.push(`/produtos/${slug}`, { scroll: true })}
+            variant="outline">
+            Comprar
+          </Button>
         </div>
       </div>
     </div>

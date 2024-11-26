@@ -1,12 +1,10 @@
 import { CategoryCard } from "./category-card";
 
-const categories: { name: string; image: string }[] = [
-  { name: "Alimentos", image: "bg-pet-food" },
-  { name: "Brinquedos", image: "bg-pet-toy" },
-  { name: "Higiene", image: "bg-pet-care" },
-];
+type Props = {
+  categories: Category[];
+};
 
-const Categories = () => {
+const Categories = ({ categories }: Props) => {
   return (
     <div className="w-full mt-20">
       <h1 className="text-3xl text-center font-bold">
