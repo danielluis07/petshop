@@ -128,4 +128,3 @@ The first four draw on the catalog and product patterns above. The final item co
 The showcase-story decision must determine which moments help win over the intended clients. Catalog decisions must establish species, assortment, attributes, and fictional content. Brand and prototype discussions must select an original identity and visual direction. The image brief must decide roles, consistency, crop requirements, and sourcing using the separate image-source investigation. The demo-behavior decision must define cart and simulated checkout states.
 
 Research is sufficient to compare these alternatives. Final design approval still needs rendered mobile/desktop prototypes and the user's reaction. No implementation, production-image library, or final DESIGN.md was created.
-
