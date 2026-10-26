@@ -56,7 +56,7 @@ Adobe states that it automatically attaches Content Credentials when all pixels 
 
 ## What the later image brief must settle
 
-The [image art-direction decision](https://github.com/danielluis07/petshop/issues/10) already owns these choices; no additional ticket is required solely because this report lists them.
+The [Choose the image art direction and asset brief](https://github.com/danielluis07/petshop/issues/10) ticket owns the asset roles, ratios, appearance, and production brief. [Choose the frontend app structure and rendering boundaries](https://github.com/danielluis07/petshop/issues/11) can subsequently confirm delivery implementation details; it does not block the art-direction choice. No additional ticket is required solely because this report lists these fields.
 
 | Brief field | Decision needed |
 | --- | --- |
@@ -66,7 +66,7 @@ The [image art-direction decision](https://github.com/danielluis07/petshop/issue
 | Composition | Agree focal subject, subject scale, orientation, camera angle, negative space, visual weight, and the treatment of human presence. |
 | Art direction | Agree background, lighting direction/softness, shadows, color treatment, environments, props, and packaging rules across the whole library. |
 | Ratios and responsive crops | Choose ratios from the approved layouts. A square card or a wide hero is a candidate, not a settled requirement. Specify mobile focal points and when a separate composition is needed. |
-| Dimensions and delivery | Agree required display sizes, export dimensions/formats, transparency, compression expectations, and local delivery/hosting constraints after the app-structure decision. |
+| Dimensions and delivery | Set target display sizes, source/export dimensions, transparency, and compression expectations in the asset brief. Confirm delivery/hosting implementation in the later frontend-structure decision without making it a prerequisite for art direction. |
 | Text and authenticity | Decide what packaging text is actually legible, how fictional product/brand markings stay consistent, and how imagery avoids suggesting real certification or retailer affiliation. |
 | Acceptance | Inspect a representative family across card, detail, cart, and narrow-screen views before producing the remainder. Check catalog correspondence as well as visual quality. |
 | Accessibility | Write contextual pt-BR alt text for informative imagery; distinguish decorative images. Describe the selected product/variant without relying on text baked into a bitmap. |
